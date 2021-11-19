@@ -11,5 +11,13 @@ namespace LTPII.Heranca
         {
             
         }
+
+        public ContaPoupanca()
+        : base(new Random().Next(999, 99999).ToString(),
+               new Random().Next(999, 99999).ToString(),
+               0.00)
+        {
+            
+        }
     }
 }

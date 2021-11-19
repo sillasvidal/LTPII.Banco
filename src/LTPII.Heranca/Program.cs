@@ -6,35 +6,18 @@ namespace LTPII.Heranca
     {
         static void Main(string[] args)
         {
-            /* Criar sistema bancário com as classes 
-            conta corrente, 
-            conta poupança e 
-            conta investimento 
+            var contaDoSillas = new ContaCorrente("8888", "10101", 1000000, 1000000);
+
+            contaDoSillas.ImprimirSaldo();
+
+            var contadoLucyano = new ContaPoupanca("2222", "121212", 25.00);
+
+            contadoLucyano.ImprimirSaldo();
             
-            características: numero da conta, agencia, saldo e limite, rendimento */
+            // DECLARAÇÃO                     //INSTÂNCIA 
+            ContaBancaria contaqualquer = new ContaCorrente("292929", "23123213", 1000, 1000);
 
-            /* Classe é o que representa o conjunto de objetos (de forma generica). */
-            /* Objeto é uma instancia da classe representando um objeto específico.*/
-
-            var minhaConta = new ContaCorrente("101010", "909090", 0.00, 0.00);
-            var minhaPoupanca = new ContaPoupanca("202020", "808080", 1.00);
-
-            var contaUniversitaria = new ContaUniversitaria("8888", "5555", 0.00, 101.00);
-            
-            Console.WriteLine("Conta Corrente");
-            Console.WriteLine($"Numero da conta..: {minhaConta.NumeroDaConta}");
-            Console.WriteLine($"Numero da agência: {minhaConta.NumeroDaAgencia}");
-            Console.WriteLine($"Saldo............: {minhaConta.Saldo:C}");
-            Console.WriteLine($"Limite...........: {minhaConta.Limite:C}");
-            
-            Console.WriteLine("");
-
-            Console.WriteLine("Conta Poupança");
-            Console.WriteLine($"Numero da conta..: {minhaPoupanca.NumeroDaConta}");
-            Console.WriteLine($"Numero da agência: {minhaPoupanca.NumeroDaAgencia}");
-            Console.WriteLine($"Saldo............: {minhaPoupanca.Saldo:C}");
-
-            //Console.ReadLine();
+            contaqualquer.ImprimirSaldo();
         }
     }
 }
