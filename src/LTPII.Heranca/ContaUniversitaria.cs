@@ -11,7 +11,31 @@ namespace LTPII.Heranca
                                   : base (numeroDaConta, numeroDaAgencia, saldo, limite)
         {
             if (limite > 100)
-            Console.WriteLine("Limite não permite para o tipo de conta.");
+            Console.WriteLine("Limite não permitido para o tipo de conta.");
+        }
+
+        public override void Depositar(double valorDeposito)
+        {
+            if (valorDeposito > 1000)
+            {
+                Console.WriteLine("Valor de depósito máximo: R$1.000,00");
+                return;
+            }
+
+            base.Depositar(valorDeposito);
+        }
+
+        public override double Sacar(double valorSaque)
+        {
+            var valorDisponivelParaSaque = this.Saldo * 0.9;
+
+            if (valorSaque > valorDisponivelParaSaque)
+            {
+                Console.WriteLine("Limite de saque excedido.");
+                return 0.0;
+            }
+
+            return base.Sacar(valorSaque);
         }
     }
 }

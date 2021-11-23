@@ -6,18 +6,20 @@ namespace LTPII.Heranca
     {
         static void Main(string[] args)
         {
-            var contaDoSillas = new ContaCorrente("8888", "10101", 1000000, 1000000);
+            var contaUniversitaria = new ContaUniversitaria("123123", "654321", 10000, 100);
+            var contaInvestimento = new ContaInvestimento("654321", "123123", 5000, 100);
 
-            contaDoSillas.ImprimirSaldo();
+            contaUniversitaria.ImprimirDetalhes();
+            contaInvestimento.ImprimirDetalhes();
 
-            var contadoLucyano = new ContaPoupanca("2222", "121212", 25.00);
+            contaUniversitaria.Depositar(1000);
+            contaUniversitaria.ImprimirDetalhes();
 
-            contadoLucyano.ImprimirSaldo();
-            
-            // DECLARAÇÃO                     //INSTÂNCIA 
-            ContaBancaria contaqualquer = new ContaCorrente("292929", "23123213", 1000, 1000);
+            contaUniversitaria.Sacar(9000);
+            contaUniversitaria.ImprimirDetalhes();
 
-            contaqualquer.ImprimirSaldo();
+            contaInvestimento.Depositar(1000);
+            contaInvestimento.ImprimirDetalhes();
         }
     }
 }
